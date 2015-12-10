@@ -1,0 +1,35 @@
+{
+  "name": "bower-git",
+  "version": "0.1.0",
+  "description": "Replaces bower component folders with their git-repository counterpart",
+  "preferGlobal": true,
+  "bin": {
+    "bower-git": "index.js"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha",
+    "lint": "node node_modules/eslint/bin/eslint.js index.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrgreentech/bower-git.git"
+  },
+  "keywords": [
+    "bower",
+    "git"
+  ],
+  "author": "Simon Auner <simon.auner@mrgreen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrgreentech/bower-git/issues"
+  },
+  "homepage": "https://github.com/mrgreentech/bower-git#readme",
+  "devDependencies": {
+    "eslint": "^1.10.3"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "del": "^2.2.0"
+  }
+}
