@@ -36,13 +36,13 @@ var folderPath = program.args[0];
 
 if (!folderPath) {
     console.error(chalk.red(indent + 'ABORTING: No path provided!'));
-    return;
+    process.exit(1);
 }
 
 // find platform folder
 if (!fs.existsSync(folderPath)) {
     console.error(chalk.red(indent + 'ABORTING: Folder "' + folderPath + '"" does not exist'));
-    return;
+    process.exit(1);
 }
 
 // find bower json
@@ -54,7 +54,7 @@ var folderName = path.basename(folderPath);
 
 if (!fs.existsSync(bowerPath)) {
     console.error(chalk.red(indent + 'ABORTING: No bower.json found in ' + folderPath));
-    return;
+    process.exit(1);
 }
 
 fs.readFile(bowerPath, function (err, data) {
@@ -73,12 +73,12 @@ fs.readFile(bowerPath, function (err, data) {
 
     if (!json.repository || !json.repository.url || !json.repository.type) {
         console.error(chalk.red(indent +  'ABORTING: No repository information found in bower.json'));
-        return;
+        process.exit(1);
     }
 
     if (json.repository.type !== 'git') {
         console.error(chalk.red(indent + 'ABORTING: Not a git repository'));
-        return;
+        process.exit(1);
     }
 
     console.log(indent + 'Replacing bower component with git repository...');
@@ -123,6 +123,7 @@ fs.readFile(bowerPath, function (err, data) {
                     console.log(chalk.green(indent + indent + 'Done!'));
                 }
                 console.log(chalk.green(indent + 'Bower component "' + json.name + '" has been replaced by its git repository'));
+                process.exit(0);
             });
 
         }, function () {
@@ -132,6 +133,7 @@ fs.readFile(bowerPath, function (err, data) {
                 console.log(indent + indent + 'Done!');
                 console.log(chalk.red(indent + 'Aborted'));
             });
+            process.exit(1);
         });
     });
 
