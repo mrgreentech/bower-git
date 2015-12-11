@@ -28,3 +28,12 @@ $ bower-git vendor/headjs
   Replacing bower component with git repository...
   Bower component "headjs" has been replaced by its git repository
 ```
+
+## Contributing
+
+Please respect the `.editorconfig` and `.eslintrc` style guide. Basically:
+
+* UTF-8
+* Unix linebreaks
+* 4 space indentation
+* Semicolons
