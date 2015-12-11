@@ -31,7 +31,7 @@ $ bower-git vendor/headjs
 
 ## Contributing
 
-Please respect the `.editorconfig` and `.eslintrc` style guide. Basically:
+Please respect the `.editorconfig`, `.jscsrc` and `.eslintrc` style guide. Basically:
 
 * UTF-8
 * Unix linebreaks

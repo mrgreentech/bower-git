@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha",
-    "lint": "node node_modules/eslint/bin/eslint.js index.js --fix"
+    "lint": "npm run eslint && npm run jscs",
+    "eslint": "node node_modules/eslint/bin/eslint.js index.js --fix",
+    "jscs": "node node_modules/jscs/bin/jscs index.js --fix"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "commander": "^2.9.0",
-    "del": "^2.2.0"
+    "del": "^2.2.0",
+    "jscs": "^2.7.0"
   }
 }
