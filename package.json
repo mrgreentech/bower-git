@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/mrgreentech/bower-git#readme",
   "devDependencies": {
+    "chai-as-promised": "^5.1.0",
     "eslint": "^1.10.3",
     "proxyquire": "^1.7.3"
   },
