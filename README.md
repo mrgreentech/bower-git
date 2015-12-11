@@ -1,8 +1,16 @@
 # bower-git
 Replaces bower component folders with their git-repository counterpart
 
+## Installation
+
 ```
-→ bower-git
+npm install https://github.com/mrgreentech/bower-git.git -g
+```
+
+## Usage
+
+```
+$ bower-git
 
   Usage: bower-git [options] <path>
 
@@ -16,7 +24,7 @@ Replaces bower component folders with their git-repository counterpart
 Pass it a folder to a bower component and bower-git will clone the repository and replace the bower component folder with its git repository counterpart.
 
 ```
-→ bower-git vendor/headjs
+$ bower-git vendor/headjs
   Replacing bower component with git repository...
   Bower component "headjs" has been replaced by its git repository
 ```
