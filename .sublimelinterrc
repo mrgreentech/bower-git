@@ -7,7 +7,7 @@
             "@disable": true
         },
         "jscs": {
-            "@disable": true
+            "@disable": false
         }
     }
 }

@@ -19,7 +19,7 @@ program
     .version(require('./package.json').version)
     .arguments('<path>')
     .option('-v, --verbose', '')
-    .action(function (path) {
+    .action(function(path) {
         pathValue = path;
     })
     .parse(process.argv);
@@ -32,7 +32,6 @@ if (!program.args.length) {
 // [1] will be the reference to the script
 // [2] will be path to bower directory
 var folderPath = program.args[0];
-
 
 if (!folderPath) {
     console.error(chalk.red(indent + 'ABORTING: No path provided!'));
@@ -57,7 +56,7 @@ if (!fs.existsSync(bowerPath)) {
     process.exit(1);
 }
 
-fs.readFile(bowerPath, function (err, data) {
+fs.readFile(bowerPath, function(err, data) {
     'use strict';
     if (err) {
         throw err;
@@ -89,7 +88,7 @@ fs.readFile(bowerPath, function (err, data) {
         console.log(indent + 'Cloning from ' + url + ' to temporary directory...');
     }
 
-    exec('git clone ' + url + ' ' + tmpFolderName, function (err) {
+    exec('git clone ' + url + ' ' + tmpFolderName, function(err) {
         if (err) {
             throw err;
         }
@@ -107,7 +106,7 @@ fs.readFile(bowerPath, function (err, data) {
         // 2. rename new folder to component name
         // 3. delete old folder
 
-        del(folderPath).then(function (paths) {
+        del(folderPath).then(function(paths) {
             // console.log('Deleted files/folders:\n', paths.join('\n'));
 
             if (program.verbose) {
@@ -115,7 +114,7 @@ fs.readFile(bowerPath, function (err, data) {
                 console.log(indent + 'Cleaning up temporary directories...');
             }
 
-            fs.rename('./' + tmpFolderName, './' + folderPath, function (err) {
+            fs.rename('./' + tmpFolderName, './' + folderPath, function(err) {
                 if (err) {
                     throw err;
                 }
@@ -126,10 +125,10 @@ fs.readFile(bowerPath, function (err, data) {
                 process.exit(0);
             });
 
-        }, function () {
+        }, function() {
             console.error(chalk.red(indent + 'Could not delete ' + folderPath));
             console.log(indent + 'Cleaning up temporary directories...');
-            del(tmpFolderName).then(function (paths) {
+            del(tmpFolderName).then(function(paths) {
                 console.log(indent + indent + 'Done!');
                 console.log(chalk.red(indent + 'Aborted'));
             });
