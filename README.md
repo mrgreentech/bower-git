@@ -4,7 +4,7 @@ Replaces bower component folders with their git-repository counterpart
 ## Installation
 
 ```
-npm install https://github.com/mrgreentech/bower-git.git -g
+npm install bower-git -g
 ```
 
 ## Usage
