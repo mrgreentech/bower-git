@@ -37,3 +37,15 @@ Please respect the `.editorconfig`, `.jscsrc` and `.eslintrc` style guide. Basic
 * Unix linebreaks
 * 4 space indentation
 * Semicolons
+
+Run:
+
+```
+npm run lint
+```
+
+Run tests:
+
+```
+npm test
+```
