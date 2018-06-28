@@ -1,4 +1,5 @@
 # bower-git
+
 Replaces bower component folders with their git-repository counterpart
 
 ## Installation
@@ -18,6 +19,7 @@ $ bower-git
 
     -h, --help     output usage information
     -V, --version  output the version number
+    -b, --branch [value]  checkout specific branch (default: master)
     -v, --verbose
 ```
 
@@ -29,14 +31,24 @@ $ bower-git vendor/headjs
   Bower component "headjs" has been replaced by its git repository
 ```
 
+### Checkout specific branch
+
+Pass `--branch={branch}` to checkout specific branch uppon clone. e.g. checkout the same branch as the current one you're in.
+
+```
+$ bower-git vendor/headjs --branch=$(git rev-parse --abbrev-ref HEAD)
+  Replacing bower component with git repository...
+  Bower component "headjs" has been replaced by its git repository
+```
+
 ## Contributing
 
 Please respect the `.editorconfig`, `.jscsrc` and `.eslintrc` style guide. Basically:
 
-* UTF-8
-* Unix linebreaks
-* 4 space indentation
-* Semicolons
+-   UTF-8
+-   Unix linebreaks
+-   4 space indentation
+-   Semicolons
 
 Run:
 
