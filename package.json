@@ -1,6 +1,6 @@
 {
   "name": "bower-git",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Replaces bower component folders with their git-repository counterpart",
   "preferGlobal": true,
   "bin": {
