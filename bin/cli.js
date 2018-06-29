@@ -10,6 +10,7 @@ program
     .version(require('../package.json').version)
     .arguments('<path>')
     .option('-v, --verbose', '')
+    .option('-b, --branch [value]', 'checkout specific branch', 'master')
     // .action(function(path) {
     //     var pathValue = path;
     // })
@@ -21,7 +22,8 @@ if (!program.args.length) {
 
 options = {
     path: program.args[0],
-    verbose: program.verbose
+    verbose: program.verbose,
+    branch: program.branch
 };
 
 // console.log(program);
