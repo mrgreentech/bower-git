@@ -43,12 +43,12 @@ $ bower-git vendor/headjs --branch=$(git rev-parse --abbrev-ref HEAD)
 
 ## Contributing
 
-Please respect the `.editorconfig`, `.jscsrc` and `.eslintrc` style guide. Basically:
+Please respect the `.editorconfig` and `.eslintrc` style guide. Basically:
 
--   UTF-8
--   Unix linebreaks
--   4 space indentation
--   Semicolons
+- UTF-8
+- Unix linebreaks
+- 4 space indentation
+- Semicolons
 
 Run:
 
